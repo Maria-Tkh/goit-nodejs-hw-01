@@ -1,4 +1,4 @@
-const contactsOperations = require("./contacts");
+const contactsOperations = require("./controllers/contacts");
 const { Command } = require("commander");
 const program = new Command();
 program
@@ -41,5 +41,9 @@ const invokeAction = async ({ action, id, name, email, phone}) => {
     }
 }
 
-invokeAction(argv);
+// invokeAction(argv);
+
+(async () => {
+    await invokeAction(argv)
+})();
 
